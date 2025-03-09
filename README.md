@@ -1,9 +1,9 @@
 # Fullstack Challenge
 
 ## Project Overview
-This is a full-stack application with React on the frontend and Node.js on the backend. It includes authentication, authorization, user management, and an admin dashboard.
+This full-stack application provides user authentication and authorization, allowing users to sign up, log in, edit details, and perform admin-level actions such as managing users. The backend is built with Node.js and Express, while the frontend uses React.
 
-## Installation and Setup
+## Setup Instructions
 
 ### Frontend (React)
 
@@ -53,23 +53,106 @@ npm start
 Swagger is implemented at `/api-docs`.
 
 #### Authentication & Authorization
-- User authentication and authorization are handled using JWT.
-- Express validation is implemented for API request validation.
+- JWT-based authentication
+- Express validation for request handling
+- Role-based access control
 
 ---
 
-## User Roles and Features
+## API Documentation
 
-### User Login
-- Users can log in using their credentials.
-- Users can edit their details.
+### Authentication Endpoints
+
+#### **Sign Up** - `POST /v1/signup`
+- Registers a new user
+- Request body:
+  ```json
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "Password123"
+  }
+  ```
+- Responses:
+  - `201`: User registered successfully
+  - `400`: Invalid input
+
+#### **Sign In** - `POST /v1/signin`
+- Logs in a user
+- Request body:
+  ```json
+  {
+    "email": "john@example.com",
+    "password": "Password123"
+  }
+  ```
+- Responses:
+  - `200`: Login successful
+  - `401`: Unauthorized
+
+### User Endpoints
+
+#### **Get User Details** - `GET /v1/userDetails`
+- Fetches authenticated user's details
+- Requires Bearer token
+- Responses:
+  - `200`: User details retrieved
+  - `401`: Unauthorized
+
+#### **Update User Details** - `PUT /v1/updateUser`
+- Updates user's profile
+- Request body:
+  ```json
+  {
+    "name": "John Updated",
+    "email": "john.updated@example.com"
+  }
+  ```
+- Responses:
+  - `200`: User updated successfully
+  - `401`: Unauthorized
+
+### Admin Endpoints
+
+#### **Fetch All Users** - `GET /v1/users`
+- Retrieves all users (Admin only)
+- Requires Bearer token
+- Responses:
+  - `200`: List of users
+  - `403`: Forbidden
+
+#### **Delete User** - `DELETE /v1/user/{userId}`
+- Deletes a user (Admin only)
+- Requires Bearer token
+- Responses:
+  - `200`: User deleted successfully
+  - `403`: Forbidden
+
+---
+
+## Technology Stack Used
+
+### Frontend
+- React.js
+- Chakra UI
+- Vercel (Deployment)
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
+- Swagger API Documentation
+- Express-rate-limit (For rate limiting authentication requests)
+
+---
+
+## Assumptions Made
 - Default user password format: **First 4 letters of their name in uppercase + @123**  
   Example: For a user named **Ajith**, the password will be **AJIT@123**.
-
-### Admin Login
-- Admin has access to the dashboard.
-- Admin can add new users.
-- Admin can remove users.
+- Only admins can access the user management endpoints (`/v1/users` and `/v1/user/{userId}`).
+- The authentication system uses JWT for secure user sessions.
+- Rate limiting is applied to authentication routes (`/v1/signup` and `/v1/signin`) to prevent abuse.
 
 ---
 
@@ -91,21 +174,6 @@ JWT_SECRET=1215e947d0339569007cc9c853812b0f2fe8aa594ea92eba3672d308d0049a45
 CLIENT=
 NODE_MAILER_API_KEY=<your_node_mailer_api_key>
 ```
-
----
-
-## Technologies Used
-
-### Frontend
-- React.js
-- Vercel (for deployment)
-
-### Backend
-- Node.js
-- Express.js
-- MongoDB
-- JWT Authentication
-- Swagger API Documentation
 
 ---
 
