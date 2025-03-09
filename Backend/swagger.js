@@ -5,16 +5,16 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDefinition = {
     openapi: '3.0.0',
     info: {
-        title: 'ADK-ER API Documentation',
+        title: 'API Documentation',
         version: '1.0.0',
         description: 'API documentation for your all case forms',
     },
     servers: [
         {
-            url: 'http://localhost:5001/api/case', // Change this to your server's URL
+            url: 'http://localhost:5005/auth', // Change this to your server's URL
         },
         {
-            url: 'https://adk-er.vercel.app/api/case', // Change this to your server's URL
+            url: 'https://adk-er.vercel.app/case', // Change this to your server's URL
         },
     ],
 };

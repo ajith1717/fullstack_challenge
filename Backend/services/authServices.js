@@ -50,13 +50,13 @@ exports.signUpService = async (payload) => {
 
                 // let sendEmail = await sendWelcomeEmail(recipientEmail, link, payload.firstName + " " + payload.lastName);
                 // if (sendEmail) {
-                //     const options = {
-                //         header: {
-                //             kid: payload.userId // Set your Key ID here
-                //         },
-                //         algorithm: 'HS256',
-                //         expiresIn: "1d"
-                //     };
+                const options = {
+                    header: {
+                        kid: payload.userId // Set your Key ID here
+                    },
+                    algorithm: 'HS256',
+                    expiresIn: "1d"
+                };
                 const accessToken = jwt.sign({
                     userId: payload.userId,
                     key: payload.userId,
