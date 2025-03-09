@@ -33,7 +33,7 @@ function EditProfile() {
 
     const fetchUserDetails = async (token) => {
         try {
-            const response = await fetch("http://localhost:5005/auth/v1/userDetails", {
+            const response = await fetch("https://fullstack-server-0gqs.onrender.com/auth/v1/userDetails", {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },
             });
@@ -59,7 +59,7 @@ function EditProfile() {
         setSuccess("");
 
         try {
-            const response = await fetch("http://localhost:5005/auth/v1/signin", {
+            const response = await fetch("https://fullstack-server-0gqs.onrender.com/auth/v1/signin", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password: currentPassword }),
@@ -81,7 +81,7 @@ function EditProfile() {
         setSuccess("");
 
         try {
-            const response = await fetch("http://localhost:5005/auth/v1/signup", {
+            const response = await fetch("https://fullstack-server-0gqs.onrender.com/auth/v1/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

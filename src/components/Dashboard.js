@@ -43,7 +43,7 @@ function Dashboard() {
 
     const fetchUsers = async () => {
         try {
-            const response = await fetch('http://localhost:5005/auth/v1/users');
+            const response = await fetch('https://fullstack-server-0gqs.onrender.com/auth/v1/users');
             if (!response.ok) throw new Error('Failed to fetch users');
             const data = await response.json();
             setUsers(data?.data || []);
@@ -73,8 +73,8 @@ function Dashboard() {
 
     const handleSubmit = async () => {
         const url = editUserId
-            ? 'http://localhost:5005/auth/v1/updateUser'
-            : 'http://localhost:5005/auth/v1/signup';
+            ? 'https://fullstack-server-0gqs.onrender.com/auth/v1/updateUser'
+            : 'https://fullstack-server-0gqs.onrender.com/auth/v1/signup';
         const method = editUserId ? 'PUT' : 'POST';
         const payload = {
             name, email, phone, userId: editUserId
@@ -96,7 +96,7 @@ function Dashboard() {
 
     const handleDelete = async () => {
         try {
-            await fetch(`http://localhost:5005/auth/v1/user/${deleteUserId}`, {
+            await fetch(`https://fullstack-server-0gqs.onrender.com/auth/v1/user/${deleteUserId}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
             });
