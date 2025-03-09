@@ -11,10 +11,7 @@ const swaggerDefinition = {
     },
     servers: [
         {
-            url: 'http://localhost:5005/auth', // Change this to your server's URL
-        },
-        {
-            url: 'https://adk-er.vercel.app/case', // Change this to your server's URL
+            url: 'https://fullstack-server-0gqs.onrender.com/auth', // Change this to your server's URL
         },
     ],
 };

@@ -37,7 +37,7 @@ function Login() {
         }
 
         try {
-            const response = await fetch('http://localhost:5005/auth/v1/signin', {
+            const response = await fetch('https://fullstack-server-0gqs.onrender.com/auth/v1/signin', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
