@@ -1,0 +1,46 @@
+{
+  "name": "sample2",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "server": "LOG_LEVEL=debug nodemon server.js",
+    "start": "NODE_ENV=production node start.js",
+    "start:dev": "NODE_ENV=development node start.js",
+    "local": "node server.js",
+    "debug": "nodemon --ignore ./logs/custom/ --inspect start.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "base-64": "^1.0.0",
+    "bcryptjs": "^2.4.3",
+    "compress-json": "^3.1.0",
+    "cors": "^2.8.5",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "fs": "^0.0.1-security",
+    "index.js": "^0.0.3",
+    "jsdom": "^25.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "node-banner": "^1.4.0",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.0",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "path": "^0.12.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-dist": "^5.17.14",
+    "swagger-ui-express": "^5.0.1",
+    "touch": "^3.1.1",
+    "web-streams-polyfill": "^4.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "Faker": "^0.7.2"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Our Platform</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Welcome to Our Platform!</h2>
+        <p>Hi {{name}},</p>
+        <p>Thank you for signing up. Please verify your email to activate your account.</p>
+        <a href="{{verification_link}}" class="btn">Verify Email</a>
+        <p class="footer">If you didn’t sign up, you can safely ignore this email.</p>
+    </div>
+</body>
+
+</html>
